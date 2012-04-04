@@ -1,0 +1,37 @@
+<?php
+$config = array(
+	'ldap' => array(
+		// LDAP host URI
+		// Several uri format are allowed.
+		// ex.) ldap://ldap.example.com/, ldaps://192.0.2.1/
+		'uri'			=> 'ldap://ldap.example.com',
+		// LDAP bind dn
+		'binddn'	=> 'cn=Manager,dc=example,dc=com',
+		// LDAP bind password
+		// must set plain password.
+		'bindpw'	=> 'bindPassword',
+		'basedn'	=> 'dc=example,dc=com',
+		'userdn'	=> 'ou=People,dc=example,dc=com',
+		'groupdn'	=> 'ou=Groups,dc=example,dc=com',
+		'maildn'	=> 'ou=Mail,dc=example,dc=com'
+	),
+	'user' => array(
+		'homeDir' => '/home',
+		'shell'   => '/bin/bash',
+		'gid'     => 100,
+		'minUid'  => 1000,
+		'minGid'  => 1000,
+	),
+	'mail' => array(
+		'homeDir'	=> '/var/spool/mail',
+		'gid'			=> 100,
+		'minUid' 	=> 1000,
+		'maxGid' 	=> 1000,
+	),
+	'passwd' => array(
+		'cmd'     => '/usr/sbin/slappasswd -s',
+		'min'     => 8,
+		'max'     => 13
+	)
+);
+?>

@@ -1,0 +1,44 @@
+[README for phpldap]
+"phpldap" is a great PHP script to help your day operation around LDAP. It makes easyier to add, delete and edit LDAP user, LDAP group and LDAP mail.
+
+[Configuration]
+configuration file is must be located as "includes/config.php".
+please copy "includes/config.php.example" to "includes/config.php" and configure it for your environment.
+
+[Example of usage]
+1. create a new user (password is auto generated)
+	% php useradd.php testuser
+
+2. create a new user (set password with command line)
+	% php useradd.php -p plainPassword testuser
+
+3. create a new user (set SSHA hashed password with command line)
+	% php useradd.php -p {SSHA}******** testuser
+
+4. delete user
+	% php userdel.php testuser
+
+5. change password
+	% php chpasswd.php -p newPassword testuser
+
+6. change login shell
+	% php chsh.php -s /usr/bin/zsh testuser
+
+7. create a new group (with set gid number)
+	% php groupadd.php -g 2000 testgroup
+
+8. add group member in group
+	% php adduser.php -G testgroup testuser
+
+9. delete group member from group
+	% php deluser.php -G testgroup testuser
+
+10. change primary group
+	% php chgroup.php -g 100 testuser
+
+11. show userlist
+	% php userlist.php
+
+12. show grouplist
+	% php grouplist.php
+
